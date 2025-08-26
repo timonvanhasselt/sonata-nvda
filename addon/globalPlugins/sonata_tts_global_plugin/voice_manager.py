@@ -18,6 +18,7 @@ import wx
 from wx.adv import CommandLinkButton
 import gui
 import synthDriverHandler
+from synthDriverHandler import getSynth
 from logHandler import log
 
 from . import SonataTextToSpeechSystem, SONATA_VOICES_DIR
@@ -95,11 +96,10 @@ class InstalledSonataVoicesPanel(SizedPanel):
 
     def invalidate_cache(self):
         self.__already_populated.clear()
-        if "sonata" in synthDriverHandler.getSynth().name.lower():
-            if invalidate_synth_voices_cache:
-                synth = synthDriverHandler.getSynth()
-                synth.terminate()
-                synth.__init__()
+        synth = getSynth()
+        if synth and "sonata" in synth.name.lower():
+            synth.terminate()
+            synth.__init__()
 
     def _get_installed_voice_name(self, voice):
         return f"{voice.name} ({voice.variant})"
@@ -466,4 +466,3 @@ def play_remote_mp3(mp3_url):
             wav_file,
             winsound.SND_FILENAME | winsound.SND_PURGE
         )
-
