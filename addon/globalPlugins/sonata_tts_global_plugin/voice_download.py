@@ -33,12 +33,12 @@ with helpers.import_bundled_library():
     from concurrent.futures import ThreadPoolExecutor
     from pathlib import Path
 
-PIPER_VOICE_LIST_URL = "https://huggingface.com/rhasspy/piper-voices/raw/main/voices.json"
-PIPER_VOICE_DOWNLOAD_URL_PREFIX = "https://huggingface.com/rhasspy/piper-voices/resolve/main"
+PIPER_VOICE_LIST_URL = "https://huggingface.co/rhasspy/piper-voices/raw/main/voices.json"
+PIPER_VOICE_DOWNLOAD_URL_PREFIX = "https://huggingface.co/rhasspy/piper-voices/resolve/main"
 PIPER_SAMPLES_URL_PREFIX = "https://rhasspy.github.io/piper-samples/samples"
 PIPER_VOICES_JSON_LOCAL_CACHE = os.path.join(SONATA_VOICES_DIR, "piper-voices.json")
-RT_VOICE_LIST_URL = "https://huggingface.com/datasets/mush42/piper-rt/raw/main/voices.json"
-RT_VOICE_DOWNLOAD_URL_PREFIX = "https://huggingface.com/datasets/mush42/piper-rt/resolve/main"
+RT_VOICE_LIST_URL = "https://huggingface.co/datasets/mush42/piper-rt/raw/main/voices.json"
+RT_VOICE_DOWNLOAD_URL_PREFIX = "https://huggingface.co/datasets/mush42/piper-rt/resolve/main"
 
 
 VOICE_INFO_REGEX = re.compile(
